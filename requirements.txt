@@ -1,0 +1,9 @@
+streamlit
+numpy
+tensorflow
+opencv-python
+random
+matplotlib
+PIL
+pandas
+scikit-image
