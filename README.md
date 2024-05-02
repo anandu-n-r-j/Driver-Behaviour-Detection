@@ -1,7 +1,10 @@
-Detecting the behaviour of drivers while driving the vehicles...
-Environment Setup
+# Revitsone Behavior Detection
 
-#### Installation
+## Introduction
+
+Revitsone Behavior Detection is a project aimed at detecting the behavior of drivers while driving vehicles using machine learning techniques. This repository contains the necessary files and code for training models, making predictions, and deploying a Streamlit web application for real-time behavior detection.
+
+### Installation
 
 To use this project, follow these steps to set up your environment:
 
@@ -11,64 +14,57 @@ To use this project, follow these steps to set up your environment:
    ```bash
    cd project-directory
    python3 -m venv venv
-   ```
 
-3. **Activate Virtual Environment**: Activate the virtual environment.
-   ```bash
-   source venv/bin/activate
-   ```
 
-4. **Install Dependencies**: Install required dependencies using the provided requirements file.
-   ```bash
-   pip install -r requirements.txt
-   ```
+## Environment Setup
 
-### Usage
+| Step                  | Description                                                   |
+|-----------------------|---------------------------------------------------------------|
+| Activate Virtual Environment | Activate the virtual environment using: `source venv/bin/activate` |
+| Install Dependencies  | Install required dependencies using: `pip install -r requirements.txt` |
+
+## Usage
+
+### Model Training
 
 #### Data Preparation
 
-1. **Download CelebA Dataset**: Manually download the CelebA dataset from [this link](https://www.kaggle.com/datasets/jessicali9530/celeba-dataset).
+Download the dataset 'Revitsone-5classes' from the directory.
 
-2. **Data Storage**: Store the downloaded dataset in a directory of your choice.
+#### Training the Model
 
-3. **Preprocessing**: If preprocessing is required, refer to the preprocessing section in the provided Jupyter notebooks.
+Use `model.py` to train the model. Adjust the code and parameters as needed for your dataset and desired model architecture.
 
-#### Running Jupyter Notebooks
+### Model Evaluation and Prediction
 
-1. **Start Jupyter Notebook**: Launch Jupyter Notebook.
-   ```bash
-   jupyter notebook
-   ```
+#### Model Evaluation
 
-2. **Open Notebooks**: Navigate to the project directory and open the provided Jupyter notebooks (`main_code.ipynb` and `evaluation.ipynb`).
+After training, evaluate the performance of the model using `evaluation.py`. This will provide insights into the model's accuracy and other metrics.
 
-3. **Execute Cells**: Run the cells in the notebooks to execute the code.
+#### Prediction
 
-#### Model Training and Evaluation
+Use `prediction.py` to make predictions on new data or in real-time scenarios. This script will utilize the trained model to classify driver behavior.
 
-- Follow the instructions provided in the notebooks (`main_code.ipynb` for training and `evaluation.ipynb` for evaluation) to train the model, evaluate performance, and generate images.
+### Streamlit App
 
-#### Code directory structure
+#### Running the App
 
-├── README.md          <- The top-level README for developers. 
-├── data 
-│   ├── input          <- Folder containing celebA raw data.
-│   └── output         <- Folder to save .ckpts, generated images and plots.
-│       ├── checkpoints     <- Weights of model saved as .h5 files
-│       └── generated_images <- Folder containing generated images.
-        └── figures          <- Folder containing plots of training progress.
-├── docs               <- A folder for documentation 
-├── notebooks 
-│   ├── main_code.ipynb      <- The main code(containing the model).
-│   └── evaluation.ipynb     <- The evaluation of the model.
-├── requirements.txt   <- Required modules to be installed.  
-├── references         <- Data dictionaries, manuals, and all other explanatory materials. 
+Execute `app.py` to launch the Streamlit web application. This app provides a user-friendly interface for behavior detection, allowing users to upload images and receive predictions.
 
-#### Additional Notes
+### Additional Notes
 
-- Ensure that you have the necessary data stored in the appropriate directories as per the instructions in the notebooks.
-- Adjust file paths and configurations as needed for your environment.
-- Feel free to modify the notebooks to suit your requirements or add additional functionality.
-- For any questions or issues, refer to the documentation or reach out to the project maintainers.
+- Ensure that you have the necessary data stored in the appropriate directories and adjust file paths and configurations as needed for your environment.
+- Customize the code and functionality to suit your specific requirements or add additional features.
+- For any questions or issues, refer to the documentation within the code or reach out for support.
 
-This README provides a basic guide for setting up the environment, running Jupyter notebooks, training the model, and evaluating performance. Customize the steps according to your specific use case and environment.
+## Repository Structure
+
+| File/Directory        | Description                                                   |
+|-----------------------|---------------------------------------------------------------|
+| README.md             | This file, providing an overview and instructions for the project. |
+| app.py                | Streamlit web application code for behavior detection.         |
+| img_928.jpg           | Sample image for testing purposes.                             |
+| inception_model.h5    | Pre-trained model weights.                    |
+| model.py              | Code for training machine learning model.                     |
+| prediction.py         | Script for making predictions using trained model.            |
+| requirements.txt      | List of required Python modules for installation.              |
